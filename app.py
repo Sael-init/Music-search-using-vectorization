@@ -4,8 +4,9 @@ import pandas as pd
 import json
 import numpy as np
 from sklearn.cluster import KMeans
-from rtree import index
+from rtree import index, find_nearest_neighbors_rtree
 from knn_search import find_nearest_neighbors
+from pca import find_nearest_neighbors_within_cluster
 
 app = Flask(__name__)
 flask_cors.CORS(app)
@@ -23,8 +24,10 @@ def knn():
             response_data = find_nearest_neighbors(key_value, 5)
         case 'pca':
             # response_data = lo que hace la funcion con pca
+            response_data = find_nearest_neighbors_within_cluster(key_value, 5)
             pass
         case 'rtree':
+            response_data = find_nearest_neighbors_rtree(key_value, 5)
             pass
 
     #response_data = [['id1','song1','author1','distance1'],['id2','song2','author2','distance2'],['id3','song3','author3','distance3'],['id4','song4','author4','distance4'],['id5','song5','author5','distance5']]
