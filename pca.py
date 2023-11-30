@@ -47,13 +47,3 @@ def find_nearest_neighbors_within_cluster(query_track_id, k):
     nearest_neighbors = distances[:k]
     return nearest_neighbors
 
-# Definir el track_id de consulta
-query_track_id = '0017A6SJgTbfQVU2EtsPNo'
-
-# Encontrar los 5 vecinos más cercanos al track_id de consulta dentro del mismo cluster
-k = 5
-nearest = find_nearest_neighbors_within_cluster(query_track_id, k)
-
-# Crear un DataFrame de Pandas para mostrar los resultados en formato de tabla
-results_df = pd.DataFrame(nearest, columns=['Track_ID', 'Track_Name', 'Track_Artist', 'Distance'])
-print(results_df[['Track_ID', 'Track_Name', 'Track_Artist']])
