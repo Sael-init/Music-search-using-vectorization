@@ -99,10 +99,10 @@ export default {
         <div class="card-body">
           <div v-for="(song, index) in songs" :key="index">
             <!-- Agregar los atributos necesarios -->
-            <p>ID: {{ song[0] }}</p>
             <p>Title: {{ song[1] }}</p>
             <p>Artist: {{ song[2] }}</p>
             <p>Distance: {{ song[3] }}</p>
+            <label >------------------------------------</label>
           </div>
         </div>
       </div>
